@@ -1,0 +1,8 @@
+#This is an example file of what your log file should look when you run an experiment
+
+Number of cores: 8
+Number of workers: 1
+Number of files: 2
+Total pairs processed: 40000
+Total time: 154.91700845293235
+

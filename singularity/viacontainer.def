@@ -1,0 +1,107 @@
+BootStrap: debootstrap
+OSVersion: stable
+MirrorURL: http://ftp.us.debian.org/debian/
+
+%files
+    conf/hadoop
+    conf/zookeeper
+
+%environment
+ 
+    # JAVA
+    export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$HBASE_HOME/bin
+
+    # HADOOP
+    export HADOOP_VERSION=3.3.3
+    export HADOOP_HOME=/usr/local/hadoop-$HADOOP_VERSION
+    export HADOOP_INSTALL=$HADOOP_HOME
+    export HADOOP_MAPRED_HOME=$HADOOP_HOME
+    export HADOOP_COMMON_HOME=$HADOOP_HOME
+    export HADOOP_HDFS_HOME=$HADOOP_HOME
+    export HADOOP_YARN_HOME=$HADOOP_HOME
+    export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+    export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop 
+    export HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec
+    export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+
+    # ZOOKEPER
+    export ZK_HOME=/usr/local/zookeeper
+    export PATH=$PATH:$ZK_HOME/bin
+
+    # SPARK
+    export SPARK_HOME=/opt/spark
+    export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+%post
+
+    # Install dependencies
+    apt-get update \
+    && apt-get -yq install curl vim default-jdk openssh-server \
+    && DEBIAN_FRONTEND=noninteractive apt-get install \
+    -yq --no-install-recommends netcat procps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+    # HADOOP
+    # Variables for installation
+    HADOOP_VERSION=3.3.3 \
+    HADOOP_HOME=/usr/local/hadoop-$HADOOP_VERSION \
+    ARCHIVE=hadoop-$HADOOP_VERSION.tar.gz
+    DOWNLOAD_PATH=/hadoop/common/hadoop-$HADOOP_VERSION/$ARCHIVE \
+    HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop \
+    HADOOP_LIBEXEC_DIR=$HADOOP_HOME/libexec \
+    PATH=$PATH:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
+ 
+    # Install Hadoop
+    mkdir -p $HADOOP_HOME $HADOOP_CONF_DIR \
+    && curl -sSL https://dlcdn.apache.org/$DOWNLOAD_PATH | \
+    tar -xz -C $HADOOP_HOME --strip-components 1 \
+    && rm -rf $ARCHIVE
+
+    # Copy config files
+    cp conf/hadoop/* $HADOOP_CONF_DIR
+
+    # ZOOKEEPER  
+    # Instaling variables
+    ZK_HOME=/usr/local/zookeeper
+    ZK_VERSION=3.6.3
+    ZK_ARCHIVE=apache-zookeeper-$ZK_VERSION-bin.tar.gz
+    DOWNLOAD_PATH=zookeeper/zookeeper-$ZK_VERSION/$ZK_ARCHIVE
+
+    # Install Zookeeper
+    mkdir -p $ZK_HOME $ZK_HOME/bin $ZK_HOME/conf \
+    && curl -sSL https://dlcdn.apache.org/$DOWNLOAD_PATH | \
+    tar -xz -C $ZK_HOME --strip-components 1 \
+    && rm -rf $ZK_ARCHIVE
+
+    # Copy config files
+    cp conf/zookeeper/bin/* $ZK_HOME/bin/
+    cp conf/zookeeper/conf/* $ZK_HOME/conf/
+
+    ## SPARK
+    # Install dependencies
+    apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq python3 \
+    && update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+    # Install Spark
+    curl -O https://archive.apache.org/dist/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
+    tar xvf spark-3.1.1-bin-hadoop3.2.tgz
+    mv spark-3.1.1-bin-hadoop3.2/ /opt/spark
+
+    # Install extra python modules
+    apt update
+    apt install -yq python3-pip    
+    pip install pyspark
+    pip install happybase
+    pip install numpy
+    pip install hdfs
+    pip install pandas
+    pip install scipy
+
+
+
+
