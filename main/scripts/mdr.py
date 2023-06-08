@@ -33,7 +33,6 @@ now = datetime.now()
 time = now.strftime("%m%d%y%H%M")
 
 
-
 ####################
 ####   PATHS   #####
 ####################
@@ -135,7 +134,7 @@ def apply_mdr_dict(x, rd1, rd2):
     
     testerror = get_risk_array(patients)
 
-    return x[0], testerror
+    return (x[0], x[1]), testerror
 
 # Apply function to every SNP-SNP row to get the interaction matrix
 def transform_patients(x):
