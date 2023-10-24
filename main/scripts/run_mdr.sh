@@ -15,6 +15,10 @@
 # ARGUMENTS
 CORES=8 #update with number of cores available per machine
 FILES=2 #update with the number of files to process
+N_WORKERS=3
+
+# First, we copy the number of workers we want to the workers file
+head -$N_WORKERS ../nodes/workers_list.txt > ../nodes/workers.txt
 WORKERS=$(wc -l ../nodes/workers.txt)
 
 # START EVERYTHING

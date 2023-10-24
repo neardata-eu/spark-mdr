@@ -12,6 +12,9 @@ cd singularity
 sudo singularity build viacontainer.sif viacontainer.def
 mv viacontainer.sif ~/viacontainer.sif
 
+Make sure you edit the configuration files in in via/singularity/conf directory to match your cluster configuration before you build the singularity.
+Mainly, you'll have to put the master IP in hadoop/core-site.xml and the working nodes in the end of zookeeper/conf/zoo.cf.
+
 then, make sure you copy the image to every working node.
 
 ### Running the experiments

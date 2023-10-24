@@ -14,16 +14,20 @@
 
 # THIS SCRIPT STOP ALL SERVICES IN ALL NODES
 
+MASTER=$HOME/via/main/nodes/master.txt
+WORKERS=$HOME/via/main/nodes/workers.txt
+
+
 # STOP INSTANCES
 # Stop Master
-while read -u10 WORKER; do
-	echo "Stopping instance in node" $WORKER
-        ssh $WORKER singularity instance stop viacontainer
-done 10< $1
+while read -u10 MS; do
+	echo "Stopping instance in MASTER $MS"
+        ssh $MS singularity instance stop viacontainer
+done 10< $MASTER
 
 # Stop Workers
-while read -u10 WORKER; do
-	echo "Stopping instance in node" $WORKER
-        ssh $WORKER singularity instance stop viacontainer
-done 10< $2
+while read -u10 WK; do
+	echo "Stopping instance in WORKER $WK"
+        ssh $WK singularity instance stop viacontainer
+done 10< $WORKERS
 
