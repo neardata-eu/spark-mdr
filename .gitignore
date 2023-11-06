@@ -1,3 +1,4 @@
 main/logs/i*
 spark-events
+data/output/mdr_chr*
 mdr_chr*
