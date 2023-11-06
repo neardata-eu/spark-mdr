@@ -1,2 +1,3 @@
 main/logs/i*
 spark-events
+data/output/mdr*
