@@ -98,4 +98,3 @@ chr0_synth0096.gz
 chr0_synth0097.gz
 chr0_synth0098.gz
 chr0_synth0099.gz
-listoffiles.txt
