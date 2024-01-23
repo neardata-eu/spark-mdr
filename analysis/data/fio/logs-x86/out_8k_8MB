@@ -1,0 +1,30 @@
+fiotest_8k_8MB: (g=0): rw=randread, bs=(R) 8192B-8192B, (W) 8192B-8192B, (T) 8192B-8192B, ioengine=libaio, iodepth=1
+...
+fio-3.28
+Starting 3 processes
+
+fiotest_8k_8MB: (groupid=0, jobs=3): err= 0: pid=2756386: Thu Jan 11 12:55:58 2024
+  read: IOPS=12.0k, BW=93.4MiB/s (97.9MB/s)(24.0MiB/257msec)
+    slat (nsec): min=1824, max=1297.3k, avg=245397.58, stdev=347635.71
+    clat (nsec): min=750, max=18352, avg=1390.81, stdev=1177.46
+     lat (usec): min=2, max=1301, avg=247.14, stdev=348.65
+    clat percentiles (nsec):
+     |  1.00th=[  772],  5.00th=[  788], 10.00th=[  796], 20.00th=[  812],
+     | 30.00th=[  820], 40.00th=[  836], 50.00th=[  860], 60.00th=[  908],
+     | 70.00th=[ 1800], 80.00th=[ 1992], 90.00th=[ 2512], 95.00th=[ 2768],
+     | 99.00th=[ 3728], 99.50th=[ 9920], 99.90th=[16064], 99.95th=[17792],
+     | 99.99th=[18304]
+  lat (nsec)   : 1000=63.12%
+  lat (usec)   : 2=16.89%, 4=19.08%, 10=0.49%, 20=0.42%
+  cpu          : usr=4.82%, sys=2.21%, ctx=1057, majf=0, minf=41
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=3072,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=93.4MiB/s (97.9MB/s), 93.4MiB/s-93.4MiB/s (97.9MB/s-97.9MB/s), io=24.0MiB (25.2MB), run=257-257msec
+
+Disk stats (read/write):
+  vda: ios=560/0, merge=0/0, ticks=395/0, in_queue=395, util=59.26%

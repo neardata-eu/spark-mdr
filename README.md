@@ -19,11 +19,26 @@ then, make sure you copy the image to every working node.
 
 ### Running the experiments
 For running the application, run the following commands:
-cd ~/via/main/scripts
+cd ~/via/main/scripts/spark
 ./run_all.sh
+
+# You can choose between different modes of running the experiments
+- spark: using hdfs without no extra information
+- spark_with_traces: get spark-history-server information and vallgrind information
+- standalone: no spark/hdfs
+- spark_with_traces_no_hdfs: remove hdfs
+- spark_multisizes: test with different file sizes
 
 ## Requirements
 Please use Singularity Version 3.6.4 or newer.
+
+## Logs
+You can find complete logs of different experiments on ~/via/main/logs/
+
+## Analysis
+You can find several notebooks to make graphic representations of the logs in ~/via/analysis
+It includes comparison with RISC-V runs.
+
 
 ## License
 Copyright 2023 Gonzalo Gómez-Sánchez

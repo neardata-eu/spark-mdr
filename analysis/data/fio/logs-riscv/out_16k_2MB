@@ -1,0 +1,29 @@
+fiotest_16k_2MB: (g=0): rw=randread, bs=(R) 16.0KiB-16.0KiB, (W) 16.0KiB-16.0KiB, (T) 16.0KiB-16.0KiB, ioengine=libaio, iodepth=1
+...
+fio-3.36
+Starting 3 processes
+
+fiotest_16k_2MB: (groupid=0, jobs=3): err= 0: pid=1919321: Thu Jan 11 13:49:33 2024
+  read: IOPS=19.2k, BW=300MiB/s (315MB/s)(6144KiB/20msec)
+    slat (usec): min=27, max=514, avg=124.03, stdev=109.95
+    clat (nsec): min=5000, max=39000, avg=6843.75, stdev=2215.91
+     lat (usec): min=33, max=532, avg=130.87, stdev=111.01
+    clat percentiles (nsec):
+     |  1.00th=[ 5024],  5.00th=[ 5024], 10.00th=[ 5984], 20.00th=[ 5984],
+     | 30.00th=[ 5984], 40.00th=[ 5984], 50.00th=[ 5984], 60.00th=[ 7008],
+     | 70.00th=[ 7008], 80.00th=[ 8032], 90.00th=[ 8032], 95.00th=[ 8032],
+     | 99.00th=[18048], 99.50th=[20096], 99.90th=[39168], 99.95th=[39168],
+     | 99.99th=[39168]
+  lat (usec)   : 10=98.70%, 20=0.78%, 50=0.52%
+  cpu          : usr=3.64%, sys=63.64%, ctx=140, majf=0, minf=74
+  IO depths    : 1=100.0%, 2=0.0%, 4=0.0%, 8=0.0%, 16=0.0%, 32=0.0%, >=64=0.0%
+     submit    : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     complete  : 0=0.0%, 4=100.0%, 8=0.0%, 16=0.0%, 32=0.0%, 64=0.0%, >=64=0.0%
+     issued rwts: total=384,0,0,0 short=0,0,0,0 dropped=0,0,0,0
+     latency   : target=0, window=0, percentile=100.00%, depth=1
+
+Run status group 0 (all jobs):
+   READ: bw=300MiB/s (315MB/s), 300MiB/s-300MiB/s (315MB/s-315MB/s), io=6144KiB (6291kB), run=20-20msec
+
+Disk stats (read/write):
+  nvme0n1: ios=0/0, sectors=0/0, merge=0/0, ticks=0/0, in_queue=0, util=0.00%

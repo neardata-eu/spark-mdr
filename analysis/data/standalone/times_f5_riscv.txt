@@ -1,0 +1,229 @@
+Number of files to be processed 5.
+
+---------------------
+----- STARTING -----
+---------------------
+
+T:INIT - Labels read in 0.05202701687812805
+T:INIT - Ratio of cases and contorls obtained in 0.002548001706600189
+T:INIT - CV sets created in 0.0021580010652542114
+T:INIT - List of files to process read in 0.0022849999368190765
+
+------------------------------------------
+---------- PROCESSING 5 FILES ----------
+------------------------------------------
+
+T:READ - Sample 1 load in 2.3317648600786924
+T:MAIN - Keys extracted in 0.00010100007057189941
+T:READ - Sample 2 read in 2.330605860799551
+T:MAIN - Keys extracted in 9.50004905462265e-05
+T:MAIN - Combinations obtained in 0.008368004113435745
+T:MAIN - MDR applied to all combs in 104.11223362572491
+T:WRITE - Data saved in 1.4945975299924612
+DONE!
+
+T:READ - Sample 2 read in 2.3827448450028896
+T:MAIN - Keys extracted in 0.00013899989426136017
+T:MAIN - Combinations obtained in 0.008038002997636795
+T:MAIN - MDR applied to all combs in 104.22999536432326
+T:WRITE - Data saved in 1.4216384887695312
+DONE!
+
+T:READ - Sample 2 read in 2.2805927824229
+T:MAIN - Keys extracted in 0.0001309998333454132
+T:MAIN - Combinations obtained in 0.007314004004001617
+T:MAIN - MDR applied to all combs in 104.49801539815962
+T:WRITE - Data saved in 1.4619924910366535
+DONE!
+
+T:READ - Sample 2 read in 2.3288057781755924
+T:MAIN - Keys extracted in 0.00014499947428703308
+T:MAIN - Combinations obtained in 0.00815800204873085
+T:MAIN - MDR applied to all combs in 104.18482543714345
+T:WRITE - Data saved in 1.4290624670684338
+DONE!
+
+T:READ - Sample 2 read in 2.4151527918875217
+T:MAIN - Keys extracted in 0.00013700127601623535
+T:MAIN - Combinations obtained in 0.007579999044537544
+T:MAIN - MDR applied to all combs in 104.2562297694385
+T:WRITE - Data saved in 1.4042944498360157
+DONE!
+
+Combined main file chr0_synth0000.gz in:  542.6034569516778
+------------------------------------------
+
+-----------------------------------------
+Processing file 1.
+
+T:READ - Sample 1 load in 2.4401137847453356
+T:MAIN - Keys extracted in 0.00013699941337108612
+T:READ - Sample 2 read in 2.343824751675129
+T:MAIN - Keys extracted in 0.0001350007951259613
+T:MAIN - Combinations obtained in 0.007782001048326492
+T:MAIN - MDR applied to all combs in 103.86751207523048
+T:WRITE - Data saved in 1.4210094474256039
+DONE!
+
+T:READ - Sample 2 read in 2.366992747411132
+T:MAIN - Keys extracted in 0.0001400001347064972
+T:MAIN - Combinations obtained in 0.008083004504442215
+T:MAIN - MDR applied to all combs in 106.10110132209957
+T:WRITE - Data saved in 1.4730344600975513
+DONE!
+
+T:READ - Sample 2 read in 2.3203427251428366
+T:MAIN - Keys extracted in 0.00013800151646137238
+T:MAIN - Combinations obtained in 0.007596999406814575
+T:MAIN - MDR applied to all combs in 105.73959883488715
+T:WRITE - Data saved in 1.4157674368470907
+DONE!
+
+T:READ - Sample 2 read in 2.2918637078255415
+T:MAIN - Keys extracted in 0.00013899989426136017
+T:MAIN - Combinations obtained in 0.008379003033041954
+T:MAIN - MDR applied to all combs in 105.72095652483404
+T:WRITE - Data saved in 1.453341444954276
+DONE!
+
+T:READ - Sample 2 read in 2.4134377408772707
+T:MAIN - Keys extracted in 0.0001400001347064972
+T:MAIN - Combinations obtained in 0.007518000900745392
+T:MAIN - MDR applied to all combs in 106.63535455800593
+T:WRITE - Data saved in 1.5249194651842117
+DONE!
+
+Combined main file chr0_synth0001.gz in:  549.5700640361756
+------------------------------------------
+
+-----------------------------------------
+Processing file 2.
+
+T:READ - Sample 1 load in 2.3150367066264153
+T:MAIN - Keys extracted in 0.00013799965381622314
+T:READ - Sample 2 read in 2.369635721668601
+T:MAIN - Keys extracted in 0.00013799965381622314
+T:MAIN - Combinations obtained in 0.007926000282168388
+T:MAIN - MDR applied to all combs in 103.67727782391012
+T:WRITE - Data saved in 1.4351432751864195
+DONE!
+
+T:READ - Sample 2 read in 2.305873841047287
+T:MAIN - Keys extracted in 0.00014399923384189606
+T:MAIN - Combinations obtained in 0.008039996027946472
+T:MAIN - MDR applied to all combs in 104.05253980122507
+T:WRITE - Data saved in 1.3881334848701954
+DONE!
+
+T:READ - Sample 2 read in 2.4754780866205692
+T:MAIN - Keys extracted in 0.00013699941337108612
+T:MAIN - Combinations obtained in 0.007573997601866722
+T:MAIN - MDR applied to all combs in 105.25288107059896
+T:WRITE - Data saved in 1.4133076313883066
+DONE!
+
+T:READ - Sample 2 read in 2.4224503692239523
+T:MAIN - Keys extracted in 0.00014100037515163422
+T:MAIN - Combinations obtained in 0.008285997435450554
+T:MAIN - MDR applied to all combs in 104.68459756486118
+T:WRITE - Data saved in 1.4795267432928085
+DONE!
+
+T:READ - Sample 2 read in 2.2498146165162325
+T:MAIN - Keys extracted in 0.00014200061559677124
+T:MAIN - Combinations obtained in 0.00818999670445919
+T:MAIN - MDR applied to all combs in 104.27371991798282
+T:WRITE - Data saved in 1.439943853765726
+DONE!
+
+Combined main file chr0_synth0002.gz in:  543.276931496337
+------------------------------------------
+
+-----------------------------------------
+Processing file 3.
+
+T:READ - Sample 1 load in 2.2382177747786045
+T:MAIN - Keys extracted in 0.00014800019562244415
+T:READ - Sample 2 read in 2.2269277814775705
+T:MAIN - Keys extracted in 0.00014699995517730713
+T:MAIN - Combinations obtained in 0.008024999871850014
+T:MAIN - MDR applied to all combs in 104.19134172052145
+T:WRITE - Data saved in 1.3797139395028353
+DONE!
+
+T:READ - Sample 2 read in 2.3890158999711275
+T:MAIN - Keys extracted in 0.0001440010964870453
+T:MAIN - Combinations obtained in 0.008311999961733818
+T:MAIN - MDR applied to all combs in 103.01664709299803
+T:WRITE - Data saved in 1.392490005120635
+DONE!
+
+T:READ - Sample 2 read in 2.3324380088597536
+T:MAIN - Keys extracted in 0.00014200061559677124
+T:MAIN - Combinations obtained in 0.0081930011510849
+T:MAIN - MDR applied to all combs in 104.94246043637395
+T:WRITE - Data saved in 1.4624960608780384
+DONE!
+
+T:READ - Sample 2 read in 2.318405097350478
+T:MAIN - Keys extracted in 0.00014300085604190826
+T:MAIN - Combinations obtained in 0.008481999859213829
+T:MAIN - MDR applied to all combs in 104.10448095574975
+T:WRITE - Data saved in 1.4373631030321121
+DONE!
+
+T:READ - Sample 2 read in 2.3864601720124483
+T:MAIN - Keys extracted in 0.00014999881386756897
+T:MAIN - Combinations obtained in 0.008055001497268677
+T:MAIN - MDR applied to all combs in 101.50885656289756
+T:WRITE - Data saved in 1.3812071327120066
+DONE!
+
+Combined main file chr0_synth0003.gz in:  538.7511947453022
+------------------------------------------
+
+-----------------------------------------
+Processing file 4.
+
+T:READ - Sample 1 load in 2.3093972243368626
+T:MAIN - Keys extracted in 0.00014699995517730713
+T:READ - Sample 2 read in 2.2925092205405235
+T:MAIN - Keys extracted in 0.00014300085604190826
+T:MAIN - Combinations obtained in 0.008163999766111374
+T:MAIN - MDR applied to all combs in 100.96005575172603
+T:WRITE - Data saved in 1.3823941592127085
+DONE!
+
+T:READ - Sample 2 read in 2.2250322606414557
+T:MAIN - Keys extracted in 0.0001400001347064972
+T:MAIN - Combinations obtained in 0.008151998743414879
+T:MAIN - MDR applied to all combs in 104.75537602230906
+T:WRITE - Data saved in 1.4792651943862438
+DONE!
+
+T:READ - Sample 2 read in 2.2598953004926443
+T:MAIN - Keys extracted in 0.00014399923384189606
+T:MAIN - Combinations obtained in 0.008116001263260841
+T:MAIN - MDR applied to all combs in 104.68638055585325
+T:WRITE - Data saved in 1.4841052144765854
+DONE!
+
+T:READ - Sample 2 read in 2.45271235704422
+T:MAIN - Keys extracted in 0.00014299899339675903
+T:MAIN - Combinations obtained in 0.008227001875638962
+T:MAIN - MDR applied to all combs in 104.92122984305024
+T:WRITE - Data saved in 1.4407392237335443
+DONE!
+
+T:READ - Sample 2 read in 2.4428163804113865
+T:MAIN - Keys extracted in 0.00014499947428703308
+T:MAIN - Combinations obtained in 0.00821700319647789
+T:MAIN - MDR applied to all combs in 105.17112189345062
+T:WRITE - Data saved in 1.4680252447724342
+DONE!
+
+Combined main file chr0_synth0004.gz in:  541.7734878472984
+------------------------------------------
+
+Total time: 2716.0346710998565
+Total pairs processed: 250000
