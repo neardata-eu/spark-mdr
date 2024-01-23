@@ -55,10 +55,10 @@ nf = 1
 arglist = sys.argv[1:]
  
 # Options
-options = "hf:c:w:"
+options = "hf:"
 
 # Long options
-long_options = ["help", "files", "cores", "workers"]
+long_options = ["help", "files"]
 
 try:
     # Parsing argument
@@ -71,8 +71,6 @@ try:
         if currentArgument in ("-h", "--help"):
             print("Please indicate the following values. Otherwise the script won't run.")
             print("-f, --files [int]: use this option followed by an integer to indicate the number of files to be processed.")
-            print("-c, --cores [int]: indicate the number of cores per worker.")
-            print("-w, --workers [int]: indicate the number of workers available.")
             sys.exit()
 
         # Set the number of variants to be processed
@@ -238,7 +236,7 @@ def read_labels(labelspath):
                 r = row[0].strip(" ")
                 labels.append(int(r[len(r)-1]))
                 line_count += 1
-        print(f'{line_count} labels read.')
+        #print(f'{line_count} labels read.')
         return(labels)
 
 # Read list of files and convert into liest
@@ -286,10 +284,16 @@ print("---------------------")
 print("----- STARTING -----")
 print("---------------------")
 print("")
-starttime0 = timeit.default_timer()
+
+DEBUG=True
+timer_1 = timeit.default_timer()
 
 # Read patients information
 labels = read_labels(DATAPATH + "labels.sample")
+
+if DEBUG:
+    timer_2 = timeit.default_timer()
+    print(f'T:INIT - Labels read in {timer_2-timer_1}')
 
 # Get np array with cases == 1
 npcases = np.array(labels)
@@ -300,8 +304,13 @@ npcontrols = np.where((npcases==0)|(npcases==1), npcases^1, npcases)
 # Get cases/controls ratio. We will use the number as the high risk/low risk separator
 ccratio = npcases.sum(axis=0)/npcontrols.sum(axis=0)
 
-print(f'Ratio of cases/controls is {ccratio}')
-print('Creating CV sets...')
+#print(f'Ratio of cases/controls is {ccratio}')
+
+if DEBUG:
+    timer_3 = timeit.default_timer()
+    print(f'T:INIT - Ratio of cases and contorls obtained in {timer_3-timer_2}')
+
+#print('Creating CV sets...')
 
 # Create training and test set
 Npatients = 1128
@@ -324,9 +333,17 @@ for i in range(5):
     trainset.append(nptrain)
     testset.append(nptest)
 
+if DEBUG:
+    timer_4 = timeit.default_timer()
+    print(f'T:INIT - CV sets created in {timer_4-timer_3}')
+
 # Read files to be processed
 files = file_to_list(DATAPATH + "listoffiles.txt")
-print(f'{len(files)-1} files ready to be processed.')
+#print(f'{len(files)-1} files ready to be processed.')
+
+if DEBUG:
+    timer_5 = timeit.default_timer()
+    print(f'T:INIT - List of files to process read in {timer_5-timer_4}')
 
 # Number of files to process
 n1 = 0
@@ -342,15 +359,25 @@ print("")
 
 # Compute all the files against all the files
 for f1 in files:
+    timer_6 = timeit.default_timer()
     
-    print("Loading file " + f1)
+    #print("Loading file " + f1)
     starttimef1 = timeit.default_timer()
 
     # Read file 1
     sample_1 = read_sample(DATAPATH + "samples/" + f1)
 
+    if DEBUG:
+        timer_7 = timeit.default_timer()
+        print(f'T:READ - Sample 1 load in {timer_7-timer_6}')
+
     # Keep only the keys information
     sample_1_ids = list(sample_1.keys())
+
+
+    if DEBUG:
+        timer_8 = timeit.default_timer()
+        print(f'T:MAIN - Keys extracted in {timer_8-timer_7}')
 
     # Compute against all the other files
     for f2 in files:
@@ -360,13 +387,24 @@ for f1 in files:
         else:
             continue
 
-        print("Combining it with file " + f2)
+        if DEBUG:
+            timer_9 = timeit.default_timer()
+
+        #print("Combining it with file " + f2)
 
         # Read file 2
         sample_2 = read_sample(DATAPATH + "samples/" + f2)
 
+        if DEBUG:
+            timer_10 = timeit.default_timer()
+            print(f'T:READ - Sample 2 read in {timer_10-timer_9}')
+
         # Keep only the keys information
         sample_2_ids = list(sample_2.keys())
+
+        if DEBUG:
+            timer_11 = timeit.default_timer()
+            print(f'T:MAIN - Keys extracted in {timer_11-timer_10}')
 
         # Calculate execution time
         starttimerf2 = timeit.default_timer()
@@ -374,17 +412,30 @@ for f1 in files:
         # Get all the combinations
         cartesiankeys = cartesian_product(np.array(sample_1_ids), np.array(sample_2_ids))
 
+        if DEBUG:
+            timer_12 = timeit.default_timer()
+            print(f'T:MAIN - Combinations obtained in {timer_12-timer_11}')
+
         # Compute MDR
-        print("Applying MDR...")
+        #print("Applying MDR...")
         mdrerror = list()
         for x in cartesiankeys:
             mdrerror.append(apply_mdr_dict(x, sample_1, sample_2))
 
-        total_pairs+=len(mdrerror)
-        print(f'MDR applied to {len(mdrerror)} pairs.')
+        if DEBUG:
+            timer_13 = timeit.default_timer()
+            print(f'T:MAIN - MDR applied to all combs in {timer_13-timer_12}')
 
-        print(f'Saving MDRERROR to file {outfile}...')
+        total_pairs+=len(mdrerror)
+        #print(f'MDR applied to {len(mdrerror)} pairs.')
+
+        #print(f'Saving MDRERROR to file {outfile}...')
         save_output(OUTPUTPATH + outfile, mdrerror)
+
+        if DEBUG:
+            timer_14 = timeit.default_timer()
+            print(f'T:WRITE - Data saved in {timer_14-timer_13}')
+
         print(f'DONE!')
         print("")
 
@@ -405,13 +456,13 @@ for f1 in files:
         print(f'Processing file {n1}.')
         print("")
 
-print("Total time: " + str(timeit.default_timer()-starttime0))
+print("Total time: " + str(timeit.default_timer()-timer_1))
 print("Total pairs processed: " + str(total_pairs))
 
 
 with open(LOGPATH + "/standalone_test_nf.log", 'a') as logfile:
     logfile.write("Number of files: " + str(nf) + "\n")
     logfile.write("Total pairs processed: " + str(total_pairs)+ "\n")
-    logfile.write("Total time: " + str(timeit.default_timer()-starttime0)+"\n")
+    logfile.write("Total time: " + str(timeit.default_timer()-timer_1)+"\n")
     logfile.write("\n")
 

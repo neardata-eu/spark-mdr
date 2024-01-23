@@ -1,0 +1,63 @@
+Number of cores: 1
+Dataset: partitions
+Number of partitions 2
+Number of files: 1
+Total pairs processed: 10000
+Total time: 1003.6142006795853
+
+Number of cores: 2
+Dataset: partitions
+Number of partitions 2
+Number of files: 1
+Total pairs processed: 10000
+Total time: 945.767034497112
+
+Number of cores: 4
+Dataset: partitions
+Number of partitions 2
+Number of files: 1
+Total pairs processed: 10000
+Total time: 963.3214155212045
+
+Number of cores: 1
+Dataset: partitions
+Number of partitions 2
+Number of files: 3
+Total pairs processed: 90000
+Total time: 2623.1504014190286
+
+Number of cores: 2
+Dataset: partitions
+Number of partitions 2
+Number of files: 3
+Total pairs processed: 90000
+Total time: 2198.8643607087433
+
+Number of cores: 4
+Dataset: partitions
+Number of partitions 2
+Number of files: 3
+Total pairs processed: 90000
+Total time: 2243.7541958503425
+
+Number of cores: 1
+Dataset: partitions
+Number of partitions 2
+Number of files: 5
+Total pairs processed: 250000
+Total time: 6020.644387867302
+
+Number of cores: 2
+Dataset: partitions
+Number of partitions 2
+Number of files: 5
+Total pairs processed: 250000
+Total time: 4757.438350306824
+
+Number of cores: 4
+Dataset: partitions
+Number of partitions 2
+Number of files: 5
+Total pairs processed: 250000
+Total time: 4864.653359249234
+

@@ -1,0 +1,40 @@
+BootStrap: debootstrap
+OSVersion: stable
+MirrorURL: http://ftp.us.debian.org/debian/
+
+%environment
+ 
+    # JAVA
+    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+    export PATH=$PATH:$JAVA_HOME/bin:$HADOOP_HOME/sbin:$HADOOP_HOME/bin:$HBASE_HOME/bin
+
+
+%post
+
+    # Install basics
+    apt-get update \
+    && apt-get -yq install curl vim default-jdk openssh-server openmpi-bin openmpi-common openssh-client libopenmpi1.3 libopenmpi-dbg libopenmpi-dev \
+    && DEBIAN_FRONTEND=noninteractive apt-get install \
+    -yq --no-install-recommends netcat procps \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+    # Install python
+    apt-get update \
+    && DEBIAN_FRONTEND=noninteractive apt-get install -yq python3 \
+    && update-alternatives --install /usr/bin/python python /usr/bin/python3 1 \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+    # Install extra python modules
+    apt update
+    apt install -yq python3-pip
+    apt install -yq python3-numpy    
+    apt install -yq python3-pandas
+    apt install -yq python3-scipy
+    apt install -yq python3-mpi4py
+
+
+
+
+

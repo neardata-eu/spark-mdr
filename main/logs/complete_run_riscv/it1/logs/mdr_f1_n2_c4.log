@@ -1,0 +1,152 @@
+/opt/slurm/22.05.3/var/slurm/job187107/slurm_script: line 22: module: command not found
+
+------------------
+Running STARTSPARK.py
+------------------
+
+-- Creating spark instances
+-- Creating tmp directories and throwing spark instance in 192.168.3.84
+rm: cannot remove '/tmp/spark/logs': No such file or directory
+rm: cannot remove '/tmp/spark/work': No such file or directory
+rm: cannot remove '/tmp/spark-events': No such file or directory
+load singularity/3.9.6 (PATH)
+INFO:    Converting SIF file to temporary sandbox...
+is a directory
+
+INFO:    instance started successfully
+-- Creating tmp directories and throwing spark instance in 192.168.3.85
+rm: cannot remove '/tmp/spark/logs': No such file or directory
+rm: cannot remove '/tmp/spark/work': No such file or directory
+rm: cannot remove '/tmp/spark-events': No such file or directory
+load singularity/3.9.6 (PATH)
+INFO:    Converting SIF file to temporary sandbox...
+is a directory
+
+INFO:    instance started successfully
+-- Creating tmp directories and starting spark instance in 192.168.3.83
+rm: cannot remove '/tmp/spark/logs': No such file or directory
+rm: cannot remove '/tmp/spark/work': No such file or directory
+rm: cannot remove '/tmp/spark-events': No such file or directory
+load singularity/3.9.6 (PATH)
+INFO:    Converting SIF file to temporary sandbox...
+is a directory
+
+INFO:    instance started successfully
+-- Starting MASTER
+load singularity/3.9.6 (PATH)
+is a directory
+starting org.apache.spark.deploy.master.Master, logging to /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.master.Master-1-arriesgado-5.out
+failed to launch: nice -n 0 /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host 192.168.3.83 --port 7078 --webui-port 8081
+full log in /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.master.Master-1-arriesgado-5.out
+-- Starting WORKER 192.168.3.84
+load singularity/3.9.6 (PATH)
+is a directory
+starting org.apache.spark.deploy.worker.Worker, logging to /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-1-arriesgado-6.out
+failed to launch: nice -n 0 /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker 192.168.3.83:7078 --webui-port 8082 --cores 4
+full log in /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-1-arriesgado-6.out
+-- Starting WORKER 192.168.3.85
+load singularity/3.9.6 (PATH)
+is a directory
+starting org.apache.spark.deploy.worker.Worker, logging to /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-2-arriesgado-7.out
+failed to launch: nice -n 0 /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker 192.168.3.83:7078 --webui-port 8083 --cores 4
+full log in /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-2-arriesgado-7.out
+
+
+------------------
+STARTSPARK.py done!
+------------------
+
+
+--- Copying input data to working node 192.168.3.84
+chr22_NuGENE01.gz
+labels.sample
+listoffiles_partitions.txt
+listoffiles.txt
+partitions
+phs000237v1_eMERGE_T2D_NORTHWESTERN_1.sample
+samples
+
+--- Copying input data to working node 192.168.3.85
+chr22_NuGENE01.gz
+labels.sample
+listoffiles.txt
+listoffiles_partitions.txt
+partitions
+phs000237v1_eMERGE_T2D_NORTHWESTERN_1.sample
+samples
+
+--- Copying input data to master node 192.168.3.83
+chr22_NuGENE01.gz
+labels.sample
+listoffiles_partitions.txt
+listoffiles.txt
+partitions
+phs000237v1_eMERGE_T2D_NORTHWESTERN_1.sample
+samples
+load singularity/3.9.6 (PATH)
+is a directory
+23/12/01 04:04:39 WARN Utils: Your hostname, arriesgado-5 resolves to a loopback address: 127.0.1.1; using 192.168.3.83 instead (on interface eth0)
+23/12/01 04:04:39 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+23/12/01 04:05:08 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1][Stage 0:>                                                          (0 + 1) / 1][Stage 0:===========================================================(1 + 0) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1][Stage 1:>                                                          (0 + 1) / 1][Stage 1:===========================================================(1 + 0) / 1]                                                                                [Stage 2:>                                                          (0 + 0) / 2][Stage 2:>                                                          (0 + 2) / 2][Stage 2:=============================>                             (1 + 1) / 2]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 4:>                                                          (0 + 1) / 1]                                                                                [Stage 5:>                                                          (0 + 1) / 1]                                                                                [Stage 6:>                                                          (0 + 1) / 1][Stage 6:===========================================================(1 + 0) / 1]                                                                                [Stage 7:>                                                          (0 + 4) / 4][Stage 7:==============>                                            (1 + 3) / 4][Stage 7:=============================>                             (2 + 2) / 4][Stage 7:============================================>              (3 + 1) / 4]                                                                                [Stage 8:>                                                          (0 + 0) / 4][Stage 8:>                                                          (0 + 1) / 4][Stage 8:>                                                          (0 + 4) / 4][Stage 8:=============================>                             (2 + 2) / 4]                                                                                
+--------------------------------
+--- STARTING sparkmdr_x86.py ---
+--------------------------------
+
+Number of files to be processed 1.
+Number of cores set to 4.
+Number of partitions of the rdd set to 2.
+Number of nodes set to 2.
+Connected with spartk
+Patients read
+Ration cases/controls: 0.8768718801996672
+List of files obtained.
+
+----- RUNNING 1 FILES -----
+
+Loading main file chr0_synth0000.gz
+Processing secondary file chr0_synth0000.gz
+Combined main file chr0_synth0000.gz in: 217.13002863898873
+------------------------------------------
+
+Total time: 963.1295954994857
+Total pairs processed: 10000
+
+--- Copying spark-events to directory
+/opt/slurm/22.05.3/var/slurm/job187107/slurm_script: line 48: module: command not found
+
+-------------------
+Running STOPSPARK.py
+-------------------
+
+-- Stopping MASTER 192.168.3.83
+load singularity/3.9.6 (PATH)
+is a directory
+stopping org.apache.spark.deploy.master.Master
+load singularity/3.9.6 (PATH)
+INFO:    Stopping spark instance of /tmp/rootfs-1773088425/root (PID=1458966)
+INFO:    Killing spark instance of /tmp/rootfs-1773088425/root (PID=1458966) (Timeout)
+Stopping WORKER 192.168.3.84
+load singularity/3.9.6 (PATH)
+is a directory
+stopping org.apache.spark.deploy.worker.Worker
+load singularity/3.9.6 (PATH)
+INFO:    Stopping spark instance of /tmp/rootfs-1492901283/root (PID=872018)
+INFO:    Killing spark instance of /tmp/rootfs-1492901283/root (PID=872018) (Timeout)
+Stopping WORKER 192.168.3.85
+load singularity/3.9.6 (PATH)
+is a directory
+no org.apache.spark.deploy.worker.Worker to stop
+load singularity/3.9.6 (PATH)
+INFO:    Stopping spark instance of /tmp/rootfs-2371635767/root (PID=894394)
+INFO:    Killing spark instance of /tmp/rootfs-2371635767/root (PID=894394) (Timeout)
+
+-------------------
+STOPSPARK.py done!
+-------------------
+
+*************
+JSCRIPT DONE!
+*************

@@ -1,0 +1,18 @@
+Number of cores: 4
+Number of workers: 2
+Number of files: 1
+Total pairs processed: 10000
+Total time: 29.297404377022758
+
+Number of cores: 4
+Number of workers: 2
+Number of files: 3
+Total pairs processed: 90000
+Total time: 112.82804431894328
+
+Number of cores: 4
+Number of workers: 2
+Number of files: 5
+Total pairs processed: 250000
+Total time: 275.0851531950757
+

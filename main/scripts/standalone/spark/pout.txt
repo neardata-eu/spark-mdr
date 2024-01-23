@@ -1,0 +1,24 @@
+# started on Wed Dec 27 13:31:36 2023
+
+
+ Performance counter stats for './multi_run_mdr.sh':
+
+            202.25 msec task-clock                #    0.001 CPUs utilized          
+               466      context-switches          #    2.304 K/sec                  
+                 3      cpu-migrations            #   14.833 /sec                   
+              8544      page-faults               #   42.245 K/sec                  
+   <not supported>      cycles                                                      
+   <not supported>      instructions                                                
+   <not supported>      branches                                                    
+   <not supported>      branch-misses                                               
+
+     287.409584004 seconds time elapsed
+
+       1.547030000 seconds user
+       1.556513000 seconds sys
+
+
+0000 seconds user
+       1.493186000 seconds sys
+
+

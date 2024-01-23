@@ -1,0 +1,140 @@
+/opt/slurm/22.05.3/var/slurm/job187096/slurm_script: line 22: module: command not found
+
+------------------
+Running STARTSPARK.py
+------------------
+
+-- Creating spark instances
+-- Creating tmp directories and throwing spark instance in 192.168.3.84
+rm: cannot remove '/tmp/spark/logs': No such file or directory
+rm: cannot remove '/tmp/spark/work': No such file or directory
+rm: cannot remove '/tmp/spark-events': No such file or directory
+load singularity/3.9.6 (PATH)
+INFO:    Converting SIF file to temporary sandbox...
+is a directory
+
+INFO:    instance started successfully
+-- Creating tmp directories and starting spark instance in 192.168.3.83
+rm: cannot remove '/tmp/spark/logs': No such file or directory
+rm: cannot remove '/tmp/spark/work': No such file or directory
+rm: cannot remove '/tmp/spark-events': No such file or directory
+load singularity/3.9.6 (PATH)
+INFO:    Converting SIF file to temporary sandbox...
+is a directory
+
+INFO:    instance started successfully
+-- Starting MASTER
+load singularity/3.9.6 (PATH)
+is a directory
+starting org.apache.spark.deploy.master.Master, logging to /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.master.Master-1-arriesgado-5.out
+failed to launch: nice -n 0 /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master --host 192.168.3.83 --port 7078 --webui-port 8081
+full log in /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.master.Master-1-arriesgado-5.out
+-- Starting WORKER 192.168.3.84
+load singularity/3.9.6 (PATH)
+is a directory
+starting org.apache.spark.deploy.worker.Worker, logging to /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-1-arriesgado-6.out
+failed to launch: nice -n 0 /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker 192.168.3.83:7078 --webui-port 8082 --cores 4
+full log in /opt/spark/logs/spark-ggomez-org.apache.spark.deploy.worker.Worker-1-arriesgado-6.out
+
+
+------------------
+STARTSPARK.py done!
+------------------
+
+
+--- Copying input data to working node 192.168.3.84
+chr22_NuGENE01.gz
+labels.sample
+listoffiles_partitions.txt
+listoffiles.txt
+partitions
+phs000237v1_eMERGE_T2D_NORTHWESTERN_1.sample
+samples
+
+--- Copying input data to master node 192.168.3.83
+chr22_NuGENE01.gz
+labels.sample
+listoffiles_partitions.txt
+listoffiles.txt
+partitions
+phs000237v1_eMERGE_T2D_NORTHWESTERN_1.sample
+samples
+load singularity/3.9.6 (PATH)
+is a directory
+23/11/30 17:42:21 WARN Utils: Your hostname, arriesgado-5 resolves to a loopback address: 127.0.1.1; using 192.168.3.83 instead (on interface eth0)
+23/11/30 17:42:22 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+23/11/30 17:42:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[Stage 0:>                                                          (0 + 0) / 1][Stage 0:>                                                          (0 + 1) / 1][Stage 0:>                                                          (0 + 1) / 1][Stage 0:===========================================================(1 + 0) / 1]                                                                                [Stage 1:>                                                          (0 + 1) / 1]                                                                                [Stage 2:>                                                          (0 + 0) / 2][Stage 2:>                                                          (0 + 2) / 2][Stage 2:=============================>                             (1 + 1) / 2]                                                                                [Stage 3:>                                                          (0 + 1) / 1]                                                                                [Stage 4:>                                                          (0 + 1) / 1]                                                                                [Stage 5:>                                                          (0 + 1) / 1][Stage 5:===========================================================(1 + 0) / 1]                                                                                [Stage 6:>                                                          (0 + 1) / 1]                                                                                [Stage 7:>                                                          (0 + 1) / 1][Stage 7:>                                                          (0 + 1) / 1][Stage 7:>                                                          (0 + 1) / 1]                                                                                [Stage 8:>                                                          (0 + 0) / 1][Stage 8:>                                                          (0 + 1) / 1][Stage 8:>                                                          (0 + 1) / 1][Stage 8:>                                                          (0 + 1) / 1]                                                                                [Stage 9:>                                                          (0 + 1) / 1]                                                                                [Stage 10:>                                                         (0 + 1) / 1]                                                                                [Stage 11:>                                                         (0 + 1) / 1][Stage 11:>                                                         (0 + 1) / 1][Stage 11:>                                                         (0 + 1) / 1]                                                                                [Stage 12:>                                                         (0 + 0) / 1][Stage 12:>                                                         (0 + 1) / 1][Stage 12:>                                                         (0 + 1) / 1][Stage 12:>                                                         (0 + 1) / 1]                                                                                [Stage 13:>                                                         (0 + 1) / 1]                                                                                [Stage 14:>                                                         (0 + 1) / 1]                                                                                [Stage 15:>                                                         (0 + 1) / 1][Stage 15:>                                                         (0 + 1) / 1][Stage 15:>                                                         (0 + 1) / 1]                                                                                [Stage 16:>                                                         (0 + 0) / 1][Stage 16:>                                                         (0 + 1) / 1][Stage 16:>                                                         (0 + 1) / 1][Stage 16:>                                                         (0 + 1) / 1]                                                                                [Stage 17:>                                                         (0 + 1) / 1]                                                                                [Stage 18:>                                                         (0 + 1) / 1]                                                                                [Stage 19:>                                                         (0 + 1) / 1]                                                                                [Stage 20:>                                                         (0 + 1) / 1][Stage 20:==========================================================(1 + 0) / 1]                                                                                [Stage 21:>                                                         (0 + 1) / 1][Stage 21:>                                                         (0 + 1) / 1][Stage 21:>                                                         (0 + 1) / 1]                                                                                [Stage 22:>                                                         (0 + 0) / 1][Stage 22:>                                                         (0 + 1) / 1][Stage 22:>                                                         (0 + 1) / 1][Stage 22:>                                                         (0 + 1) / 1]                                                                                [Stage 23:>                                                         (0 + 1) / 1]                                                                                [Stage 24:>                                                         (0 + 1) / 1]                                                                                [Stage 25:>                                                         (0 + 1) / 1][Stage 25:>                                                         (0 + 1) / 1][Stage 25:>                                                         (0 + 1) / 1]                                                                                [Stage 26:>                                                         (0 + 0) / 1][Stage 26:>                                                         (0 + 1) / 1][Stage 26:>                                                         (0 + 1) / 1][Stage 26:>                                                         (0 + 1) / 1][Stage 26:==========================================================(1 + 0) / 1]                                                                                [Stage 27:>                                                         (0 + 1) / 1]                                                                                [Stage 28:>                                                         (0 + 1) / 1]                                                                                [Stage 29:>                                                         (0 + 1) / 1][Stage 29:>                                                         (0 + 1) / 1][Stage 29:>                                                         (0 + 1) / 1]                                                                                [Stage 30:>                                                         (0 + 0) / 1][Stage 30:>                                                         (0 + 1) / 1][Stage 30:>                                                         (0 + 1) / 1][Stage 30:>                                                         (0 + 1) / 1]                                                                                [Stage 31:>                                                         (0 + 1) / 1]                                                                                [Stage 32:>                                                         (0 + 1) / 1]                                                                                [Stage 33:>                                                         (0 + 1) / 1][Stage 33:==========================================================(1 + 0) / 1]                                                                                [Stage 34:>                                                         (0 + 1) / 1]                                                                                [Stage 35:>                                                         (0 + 1) / 1][Stage 35:>                                                         (0 + 1) / 1][Stage 35:>                                                         (0 + 1) / 1][Stage 35:==========================================================(1 + 0) / 1]                                                                                [Stage 36:>                                                         (0 + 0) / 1][Stage 36:>                                                         (0 + 1) / 1][Stage 36:>                                                         (0 + 1) / 1][Stage 36:>                                                         (0 + 1) / 1]                                                                                [Stage 37:>                                                         (0 + 1) / 1]                                                                                [Stage 38:>                                                         (0 + 1) / 1]                                                                                [Stage 39:>                                                         (0 + 1) / 1][Stage 39:>                                                         (0 + 1) / 1][Stage 39:>                                                         (0 + 1) / 1]                                                                                [Stage 40:>                                                         (0 + 0) / 1][Stage 40:>                                                         (0 + 1) / 1][Stage 40:>                                                         (0 + 1) / 1][Stage 40:>                                                         (0 + 1) / 1]                                                                                [Stage 41:>                                                         (0 + 1) / 1]                                                                                [Stage 42:>                                                         (0 + 1) / 1]                                                                                [Stage 43:>                                                         (0 + 1) / 1][Stage 43:>                                                         (0 + 1) / 1][Stage 43:>                                                         (0 + 1) / 1]                                                                                [Stage 44:>                                                         (0 + 0) / 1][Stage 44:>                                                         (0 + 1) / 1][Stage 44:>                                                         (0 + 1) / 1][Stage 44:>                                                         (0 + 1) / 1][Stage 44:==========================================================(1 + 0) / 1]                                                                                
+--------------------------------
+--- STARTING sparkmdr_x86.py ---
+--------------------------------
+
+Number of files to be processed 3.
+Number of cores set to 4.
+Number of partitions of the rdd set to 1.
+Number of nodes set to 1.
+Connected with spartk
+Patients read
+Ration cases/controls: 0.8768718801996672
+List of files obtained.
+
+----- RUNNING 3 FILES -----
+
+Loading main file chr0_synth0000.gz
+Processing secondary file chr0_synth0000.gz
+Processing secondary file chr0_synth0001.gz
+Processing secondary file chr0_synth0002.gz
+Combined main file chr0_synth0000.gz in: 995.6464143656194
+------------------------------------------
+
+Loading main file chr0_synth0001.gz
+Processing secondary file chr0_synth0000.gz
+Processing secondary file chr0_synth0001.gz
+Processing secondary file chr0_synth0002.gz
+Processing secondary file chr0_synth0003.gz
+Combined main file chr0_synth0001.gz in: 980.0061246883124
+------------------------------------------
+
+Loading main file chr0_synth0002.gz
+Processing secondary file chr0_synth0000.gz
+Processing secondary file chr0_synth0001.gz
+Processing secondary file chr0_synth0002.gz
+Processing secondary file chr0_synth0003.gz
+Processing secondary file chr0_synth0004.gz
+Combined main file chr0_synth0002.gz in: 965.6692550834268
+------------------------------------------
+
+Total time: 3602.4627014566213
+Total pairs processed: 90000
+
+--- Copying spark-events to directory
+/opt/slurm/22.05.3/var/slurm/job187096/slurm_script: line 48: module: command not found
+
+-------------------
+Running STOPSPARK.py
+-------------------
+
+-- Stopping MASTER 192.168.3.83
+load singularity/3.9.6 (PATH)
+is a directory
+stopping org.apache.spark.deploy.master.Master
+load singularity/3.9.6 (PATH)
+INFO:    Stopping spark instance of /tmp/rootfs-3243539988/root (PID=1447192)
+INFO:    Killing spark instance of /tmp/rootfs-3243539988/root (PID=1447192) (Timeout)
+Stopping WORKER 192.168.3.84
+load singularity/3.9.6 (PATH)
+is a directory
+stopping org.apache.spark.deploy.worker.Worker
+load singularity/3.9.6 (PATH)
+INFO:    Stopping spark instance of /tmp/rootfs-3820142601/root (PID=862272)
+INFO:    Killing spark instance of /tmp/rootfs-3820142601/root (PID=862272) (Timeout)
+
+-------------------
+STOPSPARK.py done!
+-------------------
+
+*************
+JSCRIPT DONE!
+*************
